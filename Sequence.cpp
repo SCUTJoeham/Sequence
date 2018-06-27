@@ -101,7 +101,7 @@ string Sequence::longestRepeated()
 			maxi = i;
 		}
 	}
-        char tmp[500005];
+        char tmp[50005];
 	strncpy(tmp, a[maxi], maxlen);
 	tmp[maxlen + 1] = '\0';
 	lg_rep = tmp;
