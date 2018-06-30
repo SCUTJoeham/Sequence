@@ -1,6 +1,6 @@
 #include "Sequence.h"
 #include <algorithm>
-#define MAXN 1500005
+#define MAXN 1200001
 char c[MAXN], *a[MAXN];
 
 int pstrcmp(const void *a, const void *b)
@@ -84,7 +84,7 @@ string Sequence::longestConsecutive()
 
 string Sequence::longestRepeated() 
 {
-	string lg_rep;
+	string rep;
 	int len = sequence.size(), maxlen = -1, maxi = 0;
 
 	memcpy(c, sequence.c_str(), sequence.size());
@@ -101,11 +101,9 @@ string Sequence::longestRepeated()
 			maxi = i;
 		}
 	}
-        char tmp[50005];
-	strncpy(tmp, a[maxi], maxlen);
-	tmp[maxlen + 1] = '\0';
-	lg_rep = tmp;
-	return lg_rep;
+        
+	rep = a[maxi];
+	return rep.substr(0,maxlen);
 }
 
 int Sequence::comlen(const char *p, const char *q)
